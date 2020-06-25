@@ -21,5 +21,5 @@ import java.util.Set;
 
 public interface RecipeService {
 
-    Set<Recipe> gertRecipes();
+    Set<Recipe> getRecipes();
 }

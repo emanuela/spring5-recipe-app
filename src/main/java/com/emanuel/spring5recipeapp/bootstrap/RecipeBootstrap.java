@@ -37,9 +37,9 @@ import java.util.Optional;
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
-    private CategoryRepository categoryRepository;
-    private RecipeRepository recipeRepository;
-    private UnitOfMeasureRepository unitOfMeasureRepository;
+    private final CategoryRepository categoryRepository;
+    private final RecipeRepository recipeRepository;
+    private final UnitOfMeasureRepository unitOfMeasureRepository;
 
     public RecipeBootstrap(CategoryRepository categoryRepository, RecipeRepository recipeRepository, UnitOfMeasureRepository unitOfMeasureRepository) {
         this.categoryRepository = categoryRepository;
@@ -50,7 +50,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     @Override
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//        recipeRepository.saveAll(getRecipes());
+        recipeRepository.saveAll(getRecipes());
     }
 
     private List getRecipes() {
